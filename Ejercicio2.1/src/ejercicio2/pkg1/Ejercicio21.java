@@ -21,7 +21,7 @@ public class Ejercicio21 {
         if ((saludo.charAt(x)=='a') || (saludo.charAt(x)=='e') || (saludo.charAt(x)=='i') || (saludo.charAt(x)=='o') || (saludo.charAt(x)=='u')){
         contador++;
         }
-        }
+    }
     System.out.println("La palabra " + saludo + " contiene " + contador + " vocales");
     }
 }

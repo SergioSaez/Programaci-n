@@ -5,6 +5,8 @@
  */
 package ejercicio2.pkg2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sergio
@@ -15,7 +17,10 @@ public class Ejercicio22 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+    String Mensaje= javax.swing.JOptionPane.showInputDialog("Teclea mensaje que deseas invertir");
+    if (Mensaje.length() == 1)
+        JOptionPane.showInputDialog(Mensaje);
+    else
+       
     }
-    
 }
