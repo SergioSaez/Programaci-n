@@ -35,7 +35,7 @@ public class Ejercicio3 {
                String numM = JOptionPane.showInputDialog("Introduce el numero del que deseas ver su tabla de multiplicar");
                String tabla ="";
                for (int x = 0; x < 11 ; x++)
-                   tabla = tabla + numM + " x " + x + " = " + (numM * x) + "\n";
+                   tabla = tabla + numM + " x " + x + " = " + (numM * x);
                JOptionPane.showMessageDialog(null, tabla);
             break;
             case 4: 

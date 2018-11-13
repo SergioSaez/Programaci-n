@@ -21,9 +21,9 @@ public class Ejercicio22 {
     invertirMensaje (Mensaje);
     }
     public static void invertirMensaje (String Mensaje){
-    /*if (Mensaje.length() == 1)
+    if (Mensaje.length() == 1)
         JOptionPane.showMessageDialog(null, Mensaje);
-    else{*/
+    else{
     StringBuilder cadenaInvertida = new StringBuilder ();
     String cadenaInvertida2 = "";
     for (int y = Mensaje.length() - 1; y >= 0; y--){
@@ -31,5 +31,6 @@ public class Ejercicio22 {
         cadenaInvertida2 = cadenaInvertida2 + Mensaje.charAt(y);
     }
     JOptionPane.showMessageDialog(null, "La cadena invertida es: "+ cadenaInvertida);
+        }
     }
-    }
+}
