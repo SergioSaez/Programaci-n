@@ -1,4 +1,3 @@
-
 package ejercicioarrays2;
 
 import javax.swing.JOptionPane;
@@ -67,6 +66,5 @@ public class EjercicioArrays2 {
             JOptionPane.showMessageDialog(null, "El mes introducido es correcto");
         else
             JOptionPane.showMessageDialog(null, "El mes introducido no es correcto");
-    }
-    
+    }   
 }
