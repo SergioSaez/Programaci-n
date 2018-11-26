@@ -1,4 +1,3 @@
-
 package ej7;
 
 import java.util.Arrays;
@@ -22,9 +21,9 @@ public class Ej7 {
         int [] cantidad = new int [10];
         int continuar;
         do{
-            int codUs = Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca el codigo del producto"));
+            int codIn = Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca el codigo del producto"));
             int num = Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca el nº de productos vendidos"));
-            int position = Arrays.binarySearch(cod, codUs);
+            int position = Arrays.binarySearch(cod, codIn);
             cantidad[position] += num;
             continuar = JOptionPane.showConfirmDialog(null, "Quieres introducir más datos?");
         }while(continuar == 0);

@@ -28,11 +28,13 @@ public class Ejercicio8 {
             int v3=Integer.parseInt(val3);
             matriz [v1][v2] = v3;
             contador ++;
+            System.out.println(contador);
         }
         catch(Exception ex){ 
             JOptionPane.showMessageDialog(null, "Error");
         }
         continuar = JOptionPane.showInputDialog("Quieres continuar?");
         }while(contador <= 5 || continuar== "no");
+        System.exit (0);
     }  
 }
