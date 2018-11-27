@@ -34,7 +34,7 @@ public class Ejercicio8 {
             JOptionPane.showMessageDialog(null, "Error");
         }
         continuar = JOptionPane.showInputDialog("Quieres continuar?");
-        }while(contador <= 5 || continuar== "no");
+        }while(contador <= 100 || continuar== "no");
         System.exit (0);
     }  
 }
