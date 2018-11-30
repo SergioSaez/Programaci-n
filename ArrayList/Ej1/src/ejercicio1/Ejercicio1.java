@@ -1,6 +1,6 @@
-
 package ejercicio1;
 
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -19,7 +19,7 @@ public class Ejercicio1 {
                 contador ++;
         }catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "Lo introducido no es un número");
-        }catch(Exception ex){
+        }catch(HeadlessException ex){
             JOptionPane.showMessageDialog(null, "Error");
         }
         if(contador == 1){
@@ -34,26 +34,42 @@ public class Ejercicio1 {
             "9. Calcular la suma y la media aritmética de los valores contenidos" + "\n" +
             "10. Finalizar.");
         int el = Integer.parseInt(eleccion);
-        if (el < 0 && el > 10)
-            JOptionPane.showMessageDialog(null, "El número introducido es menor que 0 o mayor que 10");
-        if(el == 1){
-            
+        if (el < 0 || el > 10) {
+            JOptionPane.showMessageDialog(null, "El número introducido no es una de las opciones");
+        } else {
         }
+        if(el == 1){
+            double minimo = 1000000;
+            double maximo = 0;
+            for (int x= 1; x<lista.size(); x++){
+                if (lista.get(x) < minimo)
+                    minimo = lista.get(x);
+                else{}
+                if (lista.get(x) > maximo)
+                    maximo = lista.get(x);
+                else{}
+            }
+                JOptionPane.showMessageDialog(null, "El numero mayor es el " + maximo + " y el numero menor es el " + minimo);
+        }
+        //TODO pone el mismo al mayor y al menor
         if(el == 2){
             String numero2 = JOptionPane.showInputDialog("Introduce el numero que quieres buscar");
-            int n2 = Integer.parseInt(numero2);
-            lista.contains(n2);
-            //TODO terminar de ver si lo contiene
+            double n2 = Double.parseDouble(numero2);
+            if (lista.contains(n2))
+                JOptionPane.showMessageDialog(null, "El numero se encuentra en la lista");
+            else
+                JOptionPane.showMessageDialog(null, "El numero no se encuentra en la lista");
         }
         if(el == 3){
             try{
-            String numero3 = JOptionPane.showInputDialog("Introduce el numero que quieres buscar");
-            int n3 = Integer.parseInt(numero3);
-            lista .remove (n3);
+            String numero3 = JOptionPane.showInputDialog("Introduce el numero que quieres buscar y borrar");
+            double n3 = Double.parseDouble(numero3);
+            lista.remove (n3);
+            JOptionPane.showMessageDialog(null, "El numero " + n3 + " ha sido borrado");
                 }catch(NumberFormatException ex){
                     JOptionPane.showMessageDialog(null, "Lo introducido no es un número");
                 }
-                catch (Exception ex){
+                catch (HeadlessException ex){
                     JOptionPane.showMessageDialog(null, "El número introducido no existe en el ArrayList");
                 }
         }
@@ -81,9 +97,10 @@ public class Ejercicio1 {
             lista.remove (n8);
         }
         if(el == 9){
-            //TODO CALCULAR SUMA Y MEDIA ARITMÉTICA
+            //TODO "Calcular la suma y la media aritmética de los valores contenidos" 
         }
         if(el == 10)
+            
         System.exit(0);
         } 
     }
