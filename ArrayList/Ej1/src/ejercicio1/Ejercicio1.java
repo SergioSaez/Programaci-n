@@ -23,15 +23,15 @@ public class Ejercicio1 {
             JOptionPane.showMessageDialog(null, "Error");
         }
         if(contador == 1){
-        String eleccion = JOptionPane.showInputDialog("1. Visualizar el valor máximo y el mínimo" + "\n" +
-            "2. Solicitar un número y buscarlo. Muestra un mensaje indicando si lo has encontrado o no" + "\n" +
-            "3. Solicitar un número, buscarlo y borrarlo. Sino se encuentra muestra un mensaje de error" + "\n" +
-            "4. Convertir el arrayList en un array." + "\n" + 
-            "5. Si no esta vacío, mostrar el número de elementos que contiene" + "\n" +
-            "6. Insertar un nuevo elemento por el ﬁnal" + "\n" + 
-            "7. Insertar un nuevo elemento en la posición que te indique el usuario" + "\n" +
-            "8. Borrar un elemento de una posición concreta" + "\n" +
-            "9. Calcular la suma y la media aritmética de los valores contenidos" + "\n" +
+        String eleccion = JOptionPane.showInputDialog("1. Visualizar el valor máximo y el mínimo \n" +
+            "2. Solicitar un número y buscarlo. Muestra un mensaje indicando si lo has encontrado o no \n" +
+            "3. Solicitar un número, buscarlo y borrarlo. Sino se encuentra muestra un mensaje de error \n" +
+            "4. Convertir el arrayList en un array \n" + 
+            "5. Si no esta vacío, mostrar el número de elementos que contiene n" +
+            "6. Insertar un nuevo elemento por el ﬁnal \n" + 
+            "7. Insertar un nuevo elemento en la posición que te indique el usuario \n" +
+            "8. Borrar un elemento de una posición concreta \n" +
+            "9. Calcular la suma y la media aritmética de los valores contenidos \n" +
             "10. Finalizar.");
         int el = Integer.parseInt(eleccion);
         if (el < 0 || el > 10) {
@@ -100,8 +100,8 @@ public class Ejercicio1 {
             //TODO "Calcular la suma y la media aritmética de los valores contenidos" 
         }
         if(el == 10)
-            
-        System.exit(0);
+            JOptionPane.showMessageDialog(null, "Hasta la proxima");
+            System.exit(0);
         } 
     }
 }
