@@ -74,4 +74,7 @@ public class datos {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
+
+
+
 }
