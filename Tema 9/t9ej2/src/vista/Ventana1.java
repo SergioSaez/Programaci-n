@@ -10,12 +10,14 @@ package vista;
  * @author Sergio
  */
 public class Ventana1 extends javax.swing.JFrame {
-
+        private static Ventana1 v1;
+        private static VentanaAlta va;
     /**
      * Creates new form Ventana1
      */
     public Ventana1() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,15 +34,18 @@ public class Ventana1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        mSalir = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        mAlta = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        mSalirListado = new javax.swing.JMenuItem();
+        mSalir = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        bAlta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sergio\\Desktop\\Programaci-n\\802176.png")); // NOI18N
+        bAlta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sergio\\Desktop\\Programaci-n\\Tema 9\\t9ej2\\build\\classes\\vista\\802176.png")); // NOI18N
         bAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bAltaActionPerformed(evt);
@@ -56,13 +61,34 @@ public class Ventana1 extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel3.setText("XXXXXXXXXXXXXXXXXXX");
 
-        jMenu1.setText("Acontecimientos");
-        jMenuBar1.add(jMenu1);
+        jMenu4.setText("Acontecimientos");
 
-        mSalir.setText("Salir");
-        jMenuBar1.add(mSalir);
+        mAlta.setText("Alta");
+        mAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mAltaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mAlta);
 
-        setJMenuBar(jMenuBar1);
+        jMenuBar3.add(jMenu4);
+
+        jMenu5.setText("Salir");
+
+        mSalirListado.setText("Salir con listado");
+        jMenu5.add(mSalirListado);
+
+        mSalir.setText("Salir sin listado");
+        mSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mSalirActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mSalir);
+
+        jMenuBar3.add(jMenu5);
+
+        setJMenuBar(jMenuBar3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,8 +127,18 @@ public class Ventana1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAltaActionPerformed
-        // TODO add your handling code here:
+        alta();
+        this.dispose();
     }//GEN-LAST:event_bAltaActionPerformed
+
+    private void mAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAltaActionPerformed
+        alta();
+        this.dispose();
+    }//GEN-LAST:event_mAltaActionPerformed
+
+    private void mSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_mSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,9 +180,17 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenu mSalir;
+    private javax.swing.JMenuItem mAlta;
+    private javax.swing.JMenuItem mSalir;
+    private javax.swing.JMenuItem mSalirListado;
     // End of variables declaration//GEN-END:variables
+public static void alta(){
+        va = new VentanaAlta();
+        va.setVisible(true);
+}
+
 }

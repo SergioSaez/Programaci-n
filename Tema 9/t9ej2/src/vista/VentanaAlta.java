@@ -5,17 +5,19 @@
  */
 package vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sergio
  */
 public class VentanaAlta extends javax.swing.JFrame {
+private static Ventana1 v1;
 
-    /**
-     * Creates new form vENTANAaLTA
-     */
+
     public VentanaAlta() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -34,7 +36,6 @@ public class VentanaAlta extends javax.swing.JFrame {
         tfNombre = new javax.swing.JTextField();
         tfLugar = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        ftfFecha = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
         tftHoraInicio = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -43,6 +44,7 @@ public class VentanaAlta extends javax.swing.JFrame {
         tftAforo = new javax.swing.JFormattedTextField();
         bAlta = new javax.swing.JButton();
         bSalir = new javax.swing.JButton();
+        dpFecha = new org.jdesktop.swingx.JXDatePicker();
 
         jLabel7.setText("jLabel7");
 
@@ -60,8 +62,6 @@ public class VentanaAlta extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Lugar");
 
-        ftfFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Hora Inicio");
 
@@ -78,8 +78,18 @@ public class VentanaAlta extends javax.swing.JFrame {
         tftAforo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         bAlta.setText("Dar de alta");
+        bAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAltaActionPerformed(evt);
+            }
+        });
 
         bSalir.setText("Salir");
+        bSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,22 +109,23 @@ public class VentanaAlta extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel8))
                                 .addGap(57, 57, 57)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tftHoraFin)
-                                    .addComponent(tfLugar, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                    .addComponent(tfNombre)
-                                    .addComponent(ftfFecha)
-                                    .addComponent(tftHoraInicio)
-                                    .addComponent(tftAforo)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(tftHoraFin)
+                                        .addComponent(tfLugar, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                        .addComponent(tfNombre)
+                                        .addComponent(tftHoraInicio)
+                                        .addComponent(tftAforo))
+                                    .addComponent(dpFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 121, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(bAlta)
                                 .addGap(18, 18, 18)
                                 .addComponent(bSalir))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addComponent(jLabel1)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,15 +135,15 @@ public class VentanaAlta extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(tfLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(tfLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(ftfFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dpFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -145,7 +156,7 @@ public class VentanaAlta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(tftAforo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bAlta)
                     .addComponent(bSalir))
@@ -154,6 +165,16 @@ public class VentanaAlta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
+        v1 = new Ventana1();
+        v1.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_bSalirActionPerformed
+
+    private void bAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAltaActionPerformed
+        
+    }//GEN-LAST:event_bAltaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,7 +215,7 @@ public class VentanaAlta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAlta;
     private javax.swing.JButton bSalir;
-    private javax.swing.JFormattedTextField ftfFecha;
+    private org.jdesktop.swingx.JXDatePicker dpFecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -209,4 +230,25 @@ public class VentanaAlta extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField tftHoraFin;
     private javax.swing.JFormattedTextField tftHoraInicio;
     // End of variables declaration//GEN-END:variables
+
+    public void alta(){
+        if (tfNombre.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"El nombre es un campo obligatorio");
+        }else{
+            if (tfLugar.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"El lugar es un campo obligatorio");
+        }else/*{if (dpFecha.SelectedDate == null)
+                //dpfecha
+                {*/
+                if (tftHoraInicio.getText().isEmpty()){
+                      JOptionPane.showMessageDialog(null,"La hora de inicio es un campo obligatorio");
+                        }else{
+                             if (tftAforo.getText().isEmpty()){
+                             JOptionPane.showMessageDialog(null,"El aforo es un campo obligatorio");
+                         }
+                    }
+                }
+            }
+        }
+    
 }
