@@ -241,7 +241,7 @@ private static Ventana1 v1;
                 //dpfecha
                 {*/
                 if (tftHoraInicio.getText().isEmpty()){
-                      JOptionPane.showMessageDialog(null,"La hora de inicio es un campo obligatorio");
+                       JOptionPane.showMessageDialog(null,"La hora de inicio es un campo obligatorio");
                         }else{
                              if (tftAforo.getText().isEmpty()){
                              JOptionPane.showMessageDialog(null,"El aforo es un campo obligatorio");
@@ -250,5 +250,3 @@ private static Ventana1 v1;
                 }
             }
         }
-    
-
