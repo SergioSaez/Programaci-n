@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Modelo.UML;
+
+/**
+ *
+ * @author Sergio
+ */
+public class Empresas {
+            private String nif;
+            private String nombre;
+            
+    public Empresas(String nif, String nombre) {
+        this.nif = nif;
+        this.nombre = nombre;
+    }
+            
+    public String getNif() {
+        return nif;
+    }
+
+    public void setNif(String nif) {
+        this.nif = nif;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+            
+}
