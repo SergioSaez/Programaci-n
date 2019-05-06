@@ -32,7 +32,7 @@ public class Ejercicio1Arrays {
                 switch (respuesta){
                         case 1:
                                 String cadena = "";
-                                for(int x = 0; x < 10; x++)
+                                for(int x = 0; x < arraynumeros.length; x++)
                                         cadena += "Posicion: " + x + " " + "Contenido: " +arraynumeros[x] +"\n" ;
                                     
                                 JOptionPane.showMessageDialog(null, cadena);
@@ -61,7 +61,7 @@ public class Ejercicio1Arrays {
                         case 5:
                                 int c4s = 0;
                                 
-                                for(int x = 0; x < 10; x++){
+                                for(int x = 0; x < arraynumeros.length; x++){
                                         c4s = c4s + arraynumeros[x] ;
                                 }
                                 JOptionPane.showMessageDialog(null, "La suma de todos los numeros es de: " + c4s + " y la media es de: " +(c4s/arraynumeros.length));
@@ -70,6 +70,13 @@ public class Ejercicio1Arrays {
                                 Arrays.sort(arraynumeros);
                                 
                                 JOptionPane.showMessageDialog(null,"Array ordenado");
+                                /*
+                                String cadena2 = "";
+                                for(int x = arraynumeros.length; x > 0; x--)
+                                        cadena2 += "Posicion: " + x + " " + "Contenido: " +arraynumeros[x] +"\n" ;
+                                    
+                                JOptionPane.showMessageDialog(null, cadena2);*/
+                                
                         break;
                         case 7:
                                 System.exit(0);
@@ -80,5 +87,4 @@ public class Ejercicio1Arrays {
             System.exit(0);
         }
     }
-  
 }
